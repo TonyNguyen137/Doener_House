@@ -1,0 +1,340 @@
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700;900&display=swap');
+
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  --nav-clr: #000;
+  --hero-clr: #150050;
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+body {
+  font-family: "roboto", Arial;
+  font-size: 1rem;
+  color:white;
+  min-height:100vh;
+  text-align: center;
+  padding-top: 8rem;
+
+}
+
+img {
+  max-width: 100%;
+}
+/*Nav*/
+nav {
+  background: var(--nav-clr);
+  color:white;
+  font-size: 2rem;
+  height: 8rem;
+  position: fixed;
+  width: 100%;
+  top:0;
+  
+}
+
+.logo-container {
+  text-transform:uppercase;
+  font-weight: bold;
+
+  font-size: 2.5rem;  
+  letter-spacing: 0.2rem;
+
+}
+
+.logo-label {
+  margin-left: -1.5rem;
+}
+
+.logo-container img {
+  --logo-size: 7.5rem;
+
+  width: var(--logo-size);
+  height: var(--logo-size);
+  vertical-align: middle;
+}
+
+
+.container {
+  width: 80%;
+  margin-inline: auto;
+  max-width: 1200px;
+
+}
+
+nav .container {
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  align-items: baseline;
+}
+
+ul {
+  list-style: none;  
+  display:flex;
+  gap:1rem;
+  padding-block: 1.5rem;
+
+}
+
+.menu-list-wrapper {
+  overflow: hidden;
+  transition: all 0.2s linear;
+}
+
+
+
+.menu-list {
+  display:flex;
+}
+
+
+
+
+.menu-button {
+  display:none;
+}
+
+
+
+/*Hero Section*/
+
+.hero-grid {
+  display:grid;
+  margin-top: 2rem;
+
+  gap:2rem;
+
+
+  grid-template: 
+  "hero small"
+  "hero big" / 1.5fr 1fr;
+
+}
+
+.header__hero {
+  grid-area: hero;
+
+}
+
+.hero-image {
+  object-fit: contain;
+}
+
+
+.price-big, .price-small {
+  background-color: var(--nav-clr);
+  font-size:5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.price-big {
+  grid-area: big;
+
+
+}
+
+.price-small {
+  grid-area: small;
+}
+
+
+
+/*Section-products*/
+section {
+  margin-top: 5rem;
+}
+h1 {
+  color:black;
+  font-size: 6rem;
+  margin-bottom: 2rem;
+}
+
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap:1rem
+}
+
+
+.product {
+  height:25rem;
+  width: 25rem;
+  object-fit: cover;
+}
+
+.section-locations {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 300px));
+  gap:2rem;
+
+  justify-content: center;
+
+}
+.location {
+  color: black;
+  height: 15rem;
+  border: 1px solid black;
+  border-radius: 1rem;
+  font-size: 2rem;
+
+  display:grid;
+  
+  place-items: center;
+}
+
+
+/*Footer*/
+
+footer {
+  margin-top: 10rem;
+  background: black;
+}
+
+footer .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-block: 3rem;
+}
+
+.adresse {
+  font-size: 2rem;
+  line-height: 1.5;
+}
+.link {
+  font-size: 2rem;
+}
+
+.link li {
+  margin-top: 1rem;
+}
+
+
+@media (max-width: 60em) {
+
+  nav {
+    font-size: 1.5rem;
+  }
+  .price-big, .price-small {
+    font-size: 3rem;
+  }
+  .products {
+    
+    display: flex;
+    justify-content: center;
+  }
+
+  
+
+}
+
+
+@media (max-width: 50em) { 
+
+  .menu-list-wrapper {
+    height:0;
+    width:100%;
+  }
+  .menu-list {
+   
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    background:black;
+  }
+
+
+  .menu-list-wrapper[aria-expanded="true"]{
+    height:30rem;
+  }
+
+
+  .menu-button {
+    display: block;
+    width:4rem;
+    border: 0.5px solid white;
+    padding: 1rem;
+    background:none;
+    font-size: 2rem;
+    color:white;
+
+  }
+
+ 
+
+  footer {
+    font-size: 1rem;
+  }
+
+
+  .adresse {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  .link {
+    font-size: 1rem;
+  }
+  
+  h1 {
+    font-size: 3rem;
+  }
+}
+
+
+@media (max-width: 31em) { 
+
+  nav {
+    height: auto;
+
+  }
+
+  .menu-button {
+    border: none;
+  }
+
+  .logo-container {
+    text-transform:uppercase;
+    font-weight: bold;
+
+    font-size: 1.5rem;  
+    letter-spacing: 0.2rem;
+  
+  }
+  
+  .hero-grid {
+    display:grid;
+    margin-top: 2rem;
+  
+    gap:2rem;
+  
+  
+    grid-template: 
+    "hero hero"
+    "small big" / 1fr 1fr;
+  
+  }
+
+  .price-small, .price-big {
+    font-size: 1.5rem;
+  }
+  .logo-container img {
+  
+    display:none;
+  }
+
+  .menu-list-wrapper[aria-expanded="true"]{
+    height:15rem;
+  }
+
+}
